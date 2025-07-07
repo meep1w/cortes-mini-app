@@ -593,18 +593,27 @@ window.addEventListener('load', () => {
     // Функция фейкового вывода
     function fakeConsoleOutput() {
         const lines = [
-            '<span style="color:lime;">[OK]</span> Initializing...',
-            '<span style="color:cyan;">[INFO]</span> Connecting to server...',
-            '<span style="color:yellow;">[WARN]</span> Bypassing protection...',
-            '<span style="color:red;">[ERROR]</span> Access denied. Retrying...',
-            '<span style="color:lime;">[OK]</span> Access granted.',
-            '<span style="color:cyan;">[INFO]</span> Loading assets...',
-            '<span style="color:lime;">[DONE]</span> Ready.'
+            '<span style="color:lime;">[OK]</span> Инициализация клиента...',
+            '<span style="color:cyan;">[INFO]</span> Поиск активных шлюзов 1win...',
+            '<span style="color:lime;">[OK]</span> Найден шлюз: gw1.1win.com',
+            '<span style="color:cyan;">[INFO]</span> Установка защищенного соединения...',
+            '<span style="color:yellow;">[WARN]</span> TLS Handshake занимает больше времени...',
+            '<span style="color:lime;">[OK]</span> TLS Handshake успешно завершен.',
+            '<span style="color:cyan;">[INFO]</span> Обмен ключами шифрования...',
+            '<span style="color:lime;">[OK]</span> Сессионный ключ: <span style="color:white;">0xA3F9B1C4D2E7</span>',
+            '<span style="color:cyan;">[INFO]</span> Аутентификация через скрытый API...',
+            '<span style="color:lime;">[OK]</span> Токен доступа получен.',
+            '<span style="color:cyan;">[INFO]</span> Инициализация потоков данных...',
+            '<span style="color:lime;">[OK]</span> Успешное подключение к 1win.',
+            '<span style="color:cyan;">[INFO]</span> Загрузка параметров ставок...',
+            '<span style="color:lime;">[DONE]</span> Система готова к работе.'
         ];
+
 
         let i = 0;
         const interval = setInterval(() => {
             consoleContent.innerHTML += lines[i] + '<br>';
+            consoleContent.scrollTop = consoleContent.scrollHeight; // Автопрокрутка вниз
             i++;
             if (i >= lines.length) {
                 clearInterval(interval);
@@ -620,7 +629,7 @@ window.addEventListener('load', () => {
                     tapText.style.display = 'block';
                 }, 1200);
             }
-        }, 300);
+        }, 400);
     }
 
     // Клик скрывает прелодер

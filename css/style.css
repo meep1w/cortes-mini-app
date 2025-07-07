@@ -29,16 +29,19 @@
 }
 
 #consoleWindow {
-    width: 80%;
-    max-width: 500px;
-    height: 200px;
-    background: rgba(0,0,0,0.9);
+    width: 500px;         /* было меньше, сделай больше */
+    height: 300px;        /* увеличь по высоте */
+    background: #000;
+    color: #fff;
+    font-family: monospace;
+    font-size: 14px;
     border: 1px solid #444;
     padding: 10px;
-    margin-top: 20px;
-    overflow: hidden;
-    display: none;
+    overflow-y: auto;     /* прокрутка, если не влезает */
+    margin: 0 auto;
+    display: none;        /* по умолчанию скрыт */
 }
+
 
 #consoleContent {
     font-size: 14px;
